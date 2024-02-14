@@ -2,8 +2,10 @@ const express =require('express')
 const bodyparser=require('body-parser')
 const{connectToDb,getDb}=require('./dbConnect.cjs') //importing connectToDb,getDb functions from dbConnect.cjs
 const { ObjectId } = require('mongodb')
+const cors =require('cors')
 
 const app= express()
+app.use(cors())
 app.use(bodyparser.json())
 
 let db 
